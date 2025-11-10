@@ -1,0 +1,52 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.header {
+    border-bottom: 1px solid #e7e9fc;
+    padding: 24px 0;
+}
+
+.container {
+    max-width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2e2f42;
+    text-decoration: none;
+    margin-right: 76px;
+}
+
+.logo span {
+    color: #4d5ae5;
+    /* синий WEB */
+}
+
+.nav-list,
+.contacts {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-list a,
+.contacts a {
+    text-decoration: none;
+    color: #2e2f42;
+    font-weight: 500;
+}
+
+.contacts {
+    gap: 40px;
+    font-weight: 400;
+}
