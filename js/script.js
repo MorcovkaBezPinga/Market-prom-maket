@@ -1,3 +1,27 @@
+// ===== АНИМИРОВАННЫЙ FAVICON =====
+function createAnimatedFavicon() {
+    const colors = ['#0066cc', '#003d7a', '#ff9500', '#ff7200'];
+    let colorIndex = 0;
+    
+    setInterval(() => {
+        const svgData = `%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:${colors[colorIndex].replace('#', '%23')};stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:${colors[(colorIndex + 1) % colors.length].replace('#', '%23')};stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23grad)' /%3E%3Ccircle cx='50' cy='50' r='45' stroke='white' stroke-width='2' fill='none' /%3E%3Cline x1='30' y1='50' x2='70' y2='50' stroke='white' stroke-width='3' stroke-linecap='round' /%3E%3Cline x1='50' y1='30' x2='50' y2='70' stroke='white' stroke-width='3' stroke-linecap='round' /%3E%3C/svg%3E`;
+        
+        const favicon = document.querySelector("link[rel='icon']");
+        if (favicon) {
+            favicon.href = `data:image/svg+xml,${svgData}`;
+        }
+        
+        colorIndex = (colorIndex + 1) % colors.length;
+    }, 1500); // Меняется каждые 1.5 секунды
+}
+
+// Запустить анимацию при загрузке страницы
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createAnimatedFavicon);
+} else {
+    createAnimatedFavicon();
+}
+
 // ===== МОДАЛЬНОЕ ОКНО ВХОДА =====
 function openLoginModal() {
     const modal = document.getElementById('loginModal');
