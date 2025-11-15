@@ -128,9 +128,10 @@ const translations = {
         'gallery-6': 'Спортивный бег',
         
         // Контакты
+        // Контакты
         'contact-title': 'Свяжитесь с нами',
         'contact-address': '📍 Адрес',
-        'contact-address-value': 'ул. Фитнес, 123<br />Город, 12345',
+        'contact-address-value': 'вул. Фітнес, 123<br />Київ, Україна',
         'contact-phone': '📞 Телефон',
         'contact-email': '📧 Email',
         'contact-hours': '🕐 График работы',
@@ -196,9 +197,10 @@ const translations = {
         'gallery-6': 'Спортивний біг',
         
         // Контакти
+        // Контакти
         'contact-title': 'Зв\'яжіться з нами',
         'contact-address': '📍 Адреса',
-        'contact-address-value': 'вул. Фітнес, 123<br />Місто, 12345',
+        'contact-address-value': 'вул. Фітнес, 123<br />Київ, Україна',
         'contact-phone': '📞 Телефон',
         'contact-email': '📧 Email',
         'contact-hours': '🕐 Графік роботи',
@@ -264,9 +266,10 @@ const translations = {
         'gallery-6': 'Sports Running',
         
         // Contacts
+        // Contacts
         'contact-title': 'Contact Us',
         'contact-address': '📍 Address',
-        'contact-address-value': 'Fitness St., 123<br />City, 12345',
+        'contact-address-value': 'Fitness St., 123<br />Kyiv, Ukraine',
         'contact-phone': '📞 Phone',
         'contact-email': '📧 Email',
         'contact-hours': '🕐 Working Hours',
