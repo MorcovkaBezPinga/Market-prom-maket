@@ -39,6 +39,52 @@
 
     <!-- Хедер с градиентом -->
     <header class="header" id="home">
+      <!-- Молнии на заднем фоне -->
+      <div class="lightning-container">
+        <svg
+          class="lightning left-lightning"
+          viewBox="0 0 100 200"
+          preserveAspectRatio="none"
+        >
+          <polyline
+            points="50,0 40,50 60,60 35,120 55,130 30,200"
+            stroke="#fff"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <polyline
+            points="50,0 40,50 60,60 35,120 55,130 30,200"
+            stroke="rgba(255,255,255,0.3)"
+            stroke-width="8"
+            fill="none"
+            stroke-linecap="round"
+            opacity="0.5"
+          />
+        </svg>
+        <svg
+          class="lightning right-lightning"
+          viewBox="0 0 100 200"
+          preserveAspectRatio="none"
+        >
+          <polyline
+            points="50,0 60,50 40,60 65,120 45,130 70,200"
+            stroke="#fff"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <polyline
+            points="50,0 60,50 40,60 65,120 45,130 70,200"
+            stroke="rgba(255,255,255,0.3)"
+            stroke-width="8"
+            fill="none"
+            stroke-linecap="round"
+            opacity="0.5"
+          />
+        </svg>
+      </div>
+
       <div class="header-content">
         <h1>Добро пожаловать в FitnesHub</h1>
         <p>Ваш путь к здоровью и красивому телу начинается здесь</p>
@@ -48,6 +94,9 @@
 
     <!-- О нас -->
     <section class="about" id="about">
+      <div class="about-background">
+        <img src="./images/fon-dlia-avatarki-14.jpg" alt="Background" />
+      </div>
       <div class="container">
         <h2>О нас</h2>
         <div class="about-content">
@@ -86,6 +135,9 @@
 
     <!-- Услуги -->
     <section class="services" id="services">
+      <div class="services-background">
+        <img src="./images/abstraktsiia-zadnii-plan-fon-svet-svetlyi-iarkii-raznotsvetn.jpg" alt="Background" />
+      </div>
       <div class="container">
         <h2>Наши услуги</h2>
         <div class="services-grid">
@@ -191,6 +243,14 @@
               />
               <div class="gallery-overlay">
                 <span>Персональные тренировки</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image gallery-image-6">
+              <img src="./images/images (2).jpg" alt="Спортивный бег" />
+              <div class="gallery-overlay">
+                <span>Спортивный бег</span>
               </div>
             </div>
           </div>
