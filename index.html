@@ -24,16 +24,42 @@
           <span>FitnesHub</span>
         </div>
         <ul class="nav-menu">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">О нас</a></li>
-          <li><a href="#services" class="nav-link">Услуги</a></li>
-          <li><a href="#gallery" class="nav-link">Галерея</a></li>
-          <li><a href="#contact" class="nav-link">Контакты</a></li>
-          <li><a href="#auth" class="nav-link">Вход</a></li>
+          <li>
+            <a href="#home" class="nav-link" data-i18n="nav-home">Главная</a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link" data-i18n="nav-about">О нас</a>
+          </li>
+          <li>
+            <a href="#services" class="nav-link" data-i18n="nav-services"
+              >Услуги</a
+            >
+          </li>
+          <li>
+            <a href="#gallery" class="nav-link" data-i18n="nav-gallery"
+              >Галерея</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" data-i18n="nav-contact"
+              >Контакты</a
+            >
+          </li>
         </ul>
-        <button class="scroll-to-top" id="scrollToTop" title="Вернуться вверх">
-          ↑
-        </button>
+        <div class="nav-right">
+          <div class="language-selector">
+            <button class="lang-btn active" data-lang="ru">РУ</button>
+            <button class="lang-btn" data-lang="uk">УК</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <div class="user-info" id="userInfo" style="display: none">
+            <span class="username" id="username"></span>
+            <button class="logout-btn" onclick="logout()">Выход</button>
+          </div>
+          <button class="login-btn" id="loginBtn" onclick="openLoginModal()">
+            Вход
+          </button>
+        </div>
       </div>
     </nav>
 
@@ -86,8 +112,10 @@
       </div>
 
       <div class="header-content">
-        <h1>Добро пожаловать в FitnesHub</h1>
-        <p>Ваш путь к здоровью и красивому телу начинается здесь</p>
+        <h1 data-i18n="header-title">Добро пожаловать в FitnesHub</h1>
+        <p data-i18n="header-subtitle">
+          Ваш путь к здоровью и красивому телу начинается здесь
+        </p>
         <button class="cta-button">Начать тренировку</button>
       </div>
     </header>
@@ -98,19 +126,19 @@
         <img src="./images/fon-dlia-avatarki-14.jpg" alt="Background" />
       </div>
       <div class="container">
-        <h2>О нас</h2>
+        <h2 data-i18n="about-title">О нас</h2>
         <div class="about-content">
           <div class="about-text">
-            <p>
+            <p data-i18n="about-p1">
               FitnesHub - это современный фитнес-клуб, созданный для помощи вам
               в достижении ваших целей в области здоровья и фитнеса.
             </p>
-            <p>
+            <p data-i18n="about-p2">
               Наша команда опытных тренеров готова помочь вам на каждом шаге
               вашего фитнес-путешествия. Мы предоставляем полный спектр услуг,
               от групповых тренировок до персональных занятий.
             </p>
-            <p>
+            <p data-i18n="about-p3">
               Используя современное оборудование и инновационные подходы, мы
               гарантируем результаты.
             </p>
@@ -118,15 +146,15 @@
           <div class="about-stats">
             <div class="stat">
               <h3>500+</h3>
-              <p>Активных членов</p>
+              <p data-i18n="stat-members">Активных членов</p>
             </div>
             <div class="stat">
               <h3>50+</h3>
-              <p>Тренеров</p>
+              <p data-i18n="stat-trainers">Тренеров</p>
             </div>
             <div class="stat">
               <h3>10+</h3>
-              <p>Лет опыта</p>
+              <p data-i18n="stat-years">Лет опыта</p>
             </div>
           </div>
         </div>
@@ -142,48 +170,52 @@
         />
       </div>
       <div class="container">
-        <h2>Наши услуги</h2>
+        <h2 data-i18n="services-title">Наши услуги</h2>
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">💪</div>
-            <h3>Тренировки с железом</h3>
-            <p>
+            <h3 data-i18n="service-1-title">Тренировки с железом</h3>
+            <p data-i18n="service-1-desc">
               Полный спектр тренажеров и свободных весов для развития силы и
               мышечной массы.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">🏃</div>
-            <h3>Кардио зона</h3>
-            <p>
+            <h3 data-i18n="service-2-title">Кардио зона</h3>
+            <p data-i18n="service-2-desc">
               Беговые дорожки, велотренажеры и эллиптические машины для
               кардиотренировок.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">🧘</div>
-            <h3>Йога и растяжка</h3>
-            <p>
+            <h3 data-i18n="service-3-title">Йога и растяжка</h3>
+            <p data-i18n="service-3-desc">
               Специальные классы для улучшения гибкости и психического здоровья.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">🥊</div>
-            <h3>Боксинг</h3>
-            <p>
+            <h3 data-i18n="service-4-title">Боксинг</h3>
+            <p data-i18n="service-4-desc">
               Интенсивные тренировки по боксингу под руководством
               профессионалов.
             </p>
           </div>
           <div class="service-card">
             <div class="service-icon">🧘‍♀️</div>
-            <h3>Групповые тренировки</h3>
-            <p>Энергичные групповые классы: зумба, аэробика и танцы.</p>
+            <h3 data-i18n="service-5-title">Групповые тренировки</h3>
+            <p data-i18n="service-5-desc">
+              Энергичные групповые классы: зумба, аэробика и танцы.
+            </p>
           </div>
           <div class="service-card">
             <div class="service-icon">👨‍🏫</div>
-            <h3>Персональный тренер</h3>
-            <p>Индивидуальные тренировки, разработанные специально для вас.</p>
+            <h3 data-i18n="service-6-title">Персональный тренер</h3>
+            <p data-i18n="service-6-desc">
+              Индивидуальные тренировки, разработанные специально для вас.
+            </p>
           </div>
         </div>
       </div>
@@ -192,7 +224,7 @@
     <!-- Галерея -->
     <section class="gallery" id="gallery">
       <div class="container">
-        <h2>Галерея</h2>
+        <h2 data-i18n="gallery-title">Галерея</h2>
         <div class="gallery-grid">
           <div class="gallery-item">
             <div class="gallery-image gallery-image-1">
@@ -201,7 +233,7 @@
                 alt="Зал силовых тренировок"
               />
               <div class="gallery-overlay">
-                <span>Зал силовых тренировок</span>
+                <span data-i18n="gallery-1">Зал силовых тренировок</span>
               </div>
             </div>
           </div>
@@ -212,7 +244,7 @@
                 alt="Кардио зона"
               />
               <div class="gallery-overlay">
-                <span>Кардио зона</span>
+                <span data-i18n="gallery-2">Кардио зона</span>
               </div>
             </div>
           </div>
@@ -223,7 +255,7 @@
                 alt="Бассейн"
               />
               <div class="gallery-overlay">
-                <span>Бассейн</span>
+                <span data-i18n="gallery-3">Бассейн</span>
               </div>
             </div>
           </div>
@@ -234,7 +266,7 @@
                 alt="Раздевалка"
               />
               <div class="gallery-overlay">
-                <span>Раздевалка</span>
+                <span data-i18n="gallery-4">Раздевалка</span>
               </div>
             </div>
           </div>
@@ -245,7 +277,7 @@
                 alt="Фитнес тренер"
               />
               <div class="gallery-overlay">
-                <span>Персональные тренировки</span>
+                <span data-i18n="gallery-5">Персональные тренировки</span>
               </div>
             </div>
           </div>
@@ -253,7 +285,7 @@
             <div class="gallery-image gallery-image-6">
               <img src="./images/images (2).jpg" alt="Спортивный бег" />
               <div class="gallery-overlay">
-                <span>Спортивный бег</span>
+                <span data-i18n="gallery-6">Спортивный бег</span>
               </div>
             </div>
           </div>
@@ -264,111 +296,29 @@
     <!-- Контакты -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2>Свяжитесь с нами</h2>
+        <h2 data-i18n="contact-title">Свяжитесь с нами</h2>
         <div class="contact-content">
           <div class="contact-info">
             <div class="info-item">
-              <h3>📍 Адрес</h3>
-              <p>ул. Фитнес, 123<br />Город, 12345</p>
+              <h3 data-i18n="contact-address">📍 Адрес</h3>
+              <p data-i18n="contact-address-value">
+                ул. Фитнес, 123<br />Город, 12345
+              </p>
             </div>
             <div class="info-item">
-              <h3>📞 Телефон</h3>
+              <h3 data-i18n="contact-phone">📞 Телефон</h3>
               <p>+38 (123) 456-78-90</p>
             </div>
             <div class="info-item">
-              <h3>📧 Email</h3>
+              <h3 data-i18n="contact-email">📧 Email</h3>
               <p>info@fitnesshub.com</p>
             </div>
             <div class="info-item">
-              <h3>🕐 График работы</h3>
-              <p>Пн-Пт: 06:00 - 23:00<br />Сб-Вс: 08:00 - 22:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Авторизация -->
-    <section class="auth-section" id="auth">
-      <div class="auth-container">
-        <div class="auth-card">
-          <div class="auth-tabs">
-            <button class="auth-tab-btn active" data-tab="login">Вход</button>
-          </div>
-
-          <!-- Форма входа -->
-          <div class="auth-tab active" id="login-tab">
-            <h2>Вход в FitnesHub</h2>
-            <form class="auth-form">
-              <div class="auth-input-group">
-                <label>Выберите способ входа:</label>
-              </div>
-
-              <div class="auth-toggle">
-                <input
-                  type="radio"
-                  id="login-email-radio"
-                  name="login-method"
-                  value="email"
-                  checked
-                />
-                <label for="login-email-radio">По Email</label>
-
-                <input
-                  type="radio"
-                  id="login-phone-radio"
-                  name="login-method"
-                  value="phone"
-                />
-                <label for="login-phone-radio">По номеру</label>
-              </div>
-
-              <div class="auth-input-group">
-                <input
-                  type="email"
-                  id="login-email"
-                  placeholder="Введите ваш Email"
-                  class="auth-input"
-                  required
-                />
-              </div>
-
-              <div
-                class="auth-input-group"
-                id="phone-group"
-                style="display: none"
-              >
-                <input
-                  type="tel"
-                  id="login-phone"
-                  placeholder="Введите номер +38 (XXX) XXX-XX-XX"
-                  class="auth-input"
-                />
-              </div>
-
-              <div class="auth-input-group">
-                <input
-                  type="password"
-                  id="login-password"
-                  placeholder="Введите пароль"
-                  class="auth-input"
-                  required
-                />
-              </div>
-
-              <button type="submit" class="auth-button">Войти</button>
-
-              <p class="auth-footer">
-                Нет аккаунта?
-                <a
-                  href="#"
-                  class="auth-link"
-                  onclick="window.open('register.html', 'FitnesHub Registration', 'width=700,height=900,scrollbars=yes'); return false;"
-                >
-                  Создать
-                </a>
+              <h3 data-i18n="contact-hours">🕐 График работы</h3>
+              <p data-i18n="contact-hours-value">
+                Пн-Пт: 06:00 - 23:00<br />Сб-Вс: 08:00 - 22:00
               </p>
-            </form>
+            </div>
           </div>
         </div>
       </div>
@@ -379,28 +329,122 @@
       <div class="footer-content">
         <div class="footer-section">
           <h4>FitnesHub</h4>
-          <p>Ваш партнер в здоровом образе жизни</p>
+          <p data-i18n="footer-slogan">Ваш партнер в здоровом образе жизни</p>
         </div>
         <div class="footer-section">
-          <h4>Быстрые ссылки</h4>
+          <h4 data-i18n="footer-links">Быстрые ссылки</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#home" data-i18n="footer-link-home">Главная</a></li>
+            <li><a href="#about" data-i18n="footer-link-about">О нас</a></li>
+            <li>
+              <a href="#services" data-i18n="footer-link-services">Услуги</a>
+            </li>
+            <li>
+              <a href="#gallery" data-i18n="footer-link-gallery">Галерея</a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
-          <h4>Информация</h4>
-          <p>© 2025 FitnesHub. Все права защищены.</p>
+          <h4 data-i18n="footer-info">Информация</h4>
+          <p data-i18n="footer-copyright">
+            © 2025 FitnesHub. Все права защищены.
+          </p>
           <p>📜 Лицензия №12345-FIT-2025</p>
           <p>Сертификация: ISO 9001:2015</p>
         </div>
       </div>
       <div class="footer-bottom">
+        <div class="social-media">
+          <a href="https://t.me/fitnesshub" target="_blank" title="Telegram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.461c.54-.203 1.01.122.84.973z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://instagram.com/fitnesshub"
+            target="_blank"
+            title="Instagram"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.16c2.727 0 3.056.01 4.122.06 1.065.05 1.79.217 2.427.463.656.254 1.216.595 1.77 1.15.555.555.896 1.114 1.15 1.77.246.637.413 1.362.463 2.427.05 1.066.06 1.395.06 4.122 0 2.727-.01 3.056-.06 4.122-.05 1.065-.217 1.79-.463 2.427-.254.656-.595 1.216-1.15 1.77-.555.555-1.114.896-1.77 1.15-.637.246-1.362.413-2.427.463-1.066.05-1.395.06-4.122.06-2.727 0-3.056-.01-4.122-.06-1.065-.05-1.79-.217-2.427-.463-.656-.254-1.216-.595-1.77-1.15-.555-.555-.896-1.114-1.15-1.77-.246-.637-.413-1.362-.463-2.427-.05-1.066-.06-1.395-.06-4.122 0-2.727.01-3.056.06-4.122.05-1.065.217-1.79.463-2.427.254-.656.595-1.216 1.15-1.77.555-.555 1.114-.896 1.77-1.15.637-.246 1.362-.413 2.427-.463 1.066-.05 1.395-.06 4.122-.06zm0 3.6c-3.315 0-6 2.685-6 6s2.685 6 6 6 6-2.685 6-6-2.685-6-6-6zm0 9.9c-2.16 0-3.9-1.74-3.9-3.9s1.74-3.9 3.9-3.9 3.9 1.74 3.9 3.9-1.74 3.9-3.9 3.9zm6.406-11.845c-.774 0-1.404.63-1.404 1.404 0 .774.63 1.404 1.404 1.404.774 0 1.404-.63 1.404-1.404 0-.774-.63-1.404-1.404-1.404z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.tiktok.com/@fitnesshub"
+            target="_blank"
+            title="TikTok"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.06 9.605c-1.306 0-2.45-.868-2.87-2.04h-2.45v7.93c0 2.58-2.1 4.678-4.678 4.678-2.58 0-4.678-2.1-4.678-4.678 0-2.407 1.92-4.397 4.294-4.65V9.24c-3.66.36-6.597 3.492-6.597 7.26 0 4.08 3.3 7.38 7.38 7.38 4.08 0 7.38-3.3 7.38-7.38v-3.87c1.386 1.013 3.084 1.614 4.92 1.614v-2.45c-.996 0-1.944-.23-2.78-.63z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.youtube.com/@fitnesshub"
+            target="_blank"
+            title="YouTube"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 12.469c0 1.467-.375 2.99-.375 2.99s-.138.962-1.4 1.087c-1.62.168-4.044.168-6.041.168s-4.42 0-6.04-.168c-1.262-.125-1.39-1.087-1.39-1.087s-.375-1.523-.375-2.99.375-2.99.375-2.99.138-.963 1.39-1.088c1.62-.168 4.04-.168 6.04-.168s4.42 0 6.04.168c1.262.125 1.4 1.088 1.4 1.088s.375 1.523.375 2.99zM9.5 14.5l4-2.5-4-2.5v5z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/fitnesshub"
+            target="_blank"
+            title="Facebook"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.037 12h-1.83v6.5h-2.744V12H9.31v-2.367h1.153V8.3c0-.96.225-2.467 2.32-2.467h1.822v2.138h-1.315c-.216 0-.42.108-.42.572v1.46h1.768L15.037 12z"
+              />
+            </svg>
+          </a>
+        </div>
         <p>&copy; 2025 FitnesHub. Создано с ❤️ для вашего здоровья.</p>
       </div>
     </footer>
+
+    <!-- Модальное окно входа -->
+    <div class="modal" id="loginModal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+        <h2>Вход в FitnesHub</h2>
+        <form class="login-form" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <input
+              type="email"
+              id="modalEmail"
+              placeholder="Email или номер"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="modalPassword"
+              placeholder="Пароль"
+              required
+            />
+          </div>
+          <button type="submit" class="submit-btn">Войти</button>
+          <p class="register-link">
+            Нет аккаунта?
+            <a
+              href="#"
+              onclick="window.open('register.html', 'FitnesHub Registration', 'width=700,height=900,scrollbars=yes'); return false;"
+              >Создать</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
 
     <script src="js/script.js"></script>
   </body>
