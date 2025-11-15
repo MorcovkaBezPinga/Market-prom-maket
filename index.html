@@ -1,42 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FitnesHub - Ваш фитнес-клуб</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="script" href="./js/script.js" />
   </head>
   <body>
-    <header class="header">
-      <div class="container header-inner">
-        <a href="/" class="logo"><span>WEB</span>STUDIO</a>
-        <!-- Navigation -->
-        <nav class="nav">
-          <ul class="nav-list">
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contacts</a></li>
-          </ul>
-        </nav>
-
-        <ul class="contacts">
-          <li><a href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-          <li><a href="tel:+110001111111">+11 (000) 111-11-11</a></li>
+    <!-- Навигация -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="#fff" stroke-width="2" />
+            <path
+              d="M12 20h16M20 12v16"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span>FitnesHub</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">О нас</a></li>
+          <li><a href="#services" class="nav-link">Услуги</a></li>
+          <li><a href="#gallery" class="nav-link">Галерея</a></li>
+          <li><a href="#contact" class="nav-link">Контакты</a></li>
+          <li><a href="#auth" class="nav-link">Вход</a></li>
         </ul>
+        <button class="scroll-to-top" id="scrollToTop" title="Вернуться вверх">
+          ↑
+        </button>
+      </div>
+    </nav>
+
+    <!-- Хедер с градиентом -->
+    <header class="header" id="home">
+      <div class="header-content">
+        <h1>Добро пожаловать в FitnesHub</h1>
+        <p>Ваш путь к здоровью и красивому телу начинается здесь</p>
+        <button class="cta-button">Начать тренировку</button>
       </div>
     </header>
-    <!-- Main -1  -->
-    <main>
-      <section>
-        <p>Effective Solutions for Your Business</p>
-        <ul>
-          <li>
-            Strategy
-          </li>
-        </ul>
-      </section>
-    </main>
-    <!-- Footer -1  -->
-    <footer></footer>
+
+    <!-- О нас -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2>О нас</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              FitnesHub - это современный фитнес-клуб, созданный для помощи вам
+              в достижении ваших целей в области здоровья и фитнеса.
+            </p>
+            <p>
+              Наша команда опытных тренеров готова помочь вам на каждом шаге
+              вашего фитнес-путешествия. Мы предоставляем полный спектр услуг,
+              от групповых тренировок до персональных занятий.
+            </p>
+            <p>
+              Используя современное оборудование и инновационные подходы, мы
+              гарантируем результаты.
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <h3>500+</h3>
+              <p>Активных членов</p>
+            </div>
+            <div class="stat">
+              <h3>50+</h3>
+              <p>Тренеров</p>
+            </div>
+            <div class="stat">
+              <h3>10+</h3>
+              <p>Лет опыта</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2>Наши услуги</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">💪</div>
+            <h3>Тренировки с железом</h3>
+            <p>
+              Полный спектр тренажеров и свободных весов для развития силы и
+              мышечной массы.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🏃</div>
+            <h3>Кардио зона</h3>
+            <p>
+              Беговые дорожки, велотренажеры и эллиптические машины для
+              кардиотренировок.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🧘</div>
+            <h3>Йога и растяжка</h3>
+            <p>
+              Специальные классы для улучшения гибкости и психического здоровья.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🥊</div>
+            <h3>Боксинг</h3>
+            <p>
+              Интенсивные тренировки по боксингу под руководством
+              профессионалов.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🧘‍♀️</div>
+            <h3>Групповые тренировки</h3>
+            <p>Энергичные групповые классы: зумба, аэробика и танцы.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">👨‍🏫</div>
+            <h3>Персональный тренер</h3>
+            <p>Индивидуальные тренировки, разработанные специально для вас.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Галерея -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <h2>Галерея</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-image gallery-image-1">
+              <img
+                src="./images/abstract-blur-gym-fitness-room-interior_74190-5887.jpg"
+                alt="Зал силовых тренировок"
+              />
+              <div class="gallery-overlay">
+                <span>Зал силовых тренировок</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image gallery-image-2">
+              <img
+                src="./images/pexels-victorfreitas-841130 (1).jpg"
+                alt="Кардио зона"
+              />
+              <div class="gallery-overlay">
+                <span>Кардио зона</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image gallery-image-3">
+              <img
+                src="./images/foto-sovremennogo-krytogo-basseina (1).jpg"
+                alt="Бассейн"
+              />
+              <div class="gallery-overlay">
+                <span>Бассейн</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image gallery-image-4">
+              <img
+                src="./images/devuska-v-razdevalke (1).jpg"
+                alt="Раздевалка"
+              />
+              <div class="gallery-overlay">
+                <span>Раздевалка</span>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image gallery-image-5">
+              <img
+                src="./images/molodaa-zensina-s-rukoi-na-grudi-pokazyvaa-znak-ostanovki-v-kletcatoi-rubaske-i-vyglada-vzvolnovannoi-perednii-plan (1).jpg"
+                alt="Фитнес тренер"
+              />
+              <div class="gallery-overlay">
+                <span>Персональные тренировки</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Свяжитесь с нами</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="info-item">
+              <h3>📍 Адрес</h3>
+              <p>ул. Фитнес, 123<br />Город, 12345</p>
+            </div>
+            <div class="info-item">
+              <h3>📞 Телефон</h3>
+              <p>+38 (123) 456-78-90</p>
+            </div>
+            <div class="info-item">
+              <h3>📧 Email</h3>
+              <p>info@fitnesshub.com</p>
+            </div>
+            <div class="info-item">
+              <h3>🕐 График работы</h3>
+              <p>Пн-Пт: 06:00 - 23:00<br />Сб-Вс: 08:00 - 22:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Авторизация -->
+    <section class="auth-section" id="auth">
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-tabs">
+            <button class="auth-tab-btn active" data-tab="login">Вход</button>
+          </div>
+
+          <!-- Форма входа -->
+          <div class="auth-tab active" id="login-tab">
+            <h2>Вход в FitnesHub</h2>
+            <form class="auth-form">
+              <div class="auth-input-group">
+                <label>Выберите способ входа:</label>
+              </div>
+
+              <div class="auth-toggle">
+                <input
+                  type="radio"
+                  id="login-email-radio"
+                  name="login-method"
+                  value="email"
+                  checked
+                />
+                <label for="login-email-radio">По Email</label>
+
+                <input
+                  type="radio"
+                  id="login-phone-radio"
+                  name="login-method"
+                  value="phone"
+                />
+                <label for="login-phone-radio">По номеру</label>
+              </div>
+
+              <div class="auth-input-group">
+                <input
+                  type="email"
+                  id="login-email"
+                  placeholder="Введите ваш Email"
+                  class="auth-input"
+                  required
+                />
+              </div>
+
+              <div
+                class="auth-input-group"
+                id="phone-group"
+                style="display: none"
+              >
+                <input
+                  type="tel"
+                  id="login-phone"
+                  placeholder="Введите номер +38 (XXX) XXX-XX-XX"
+                  class="auth-input"
+                />
+              </div>
+
+              <div class="auth-input-group">
+                <input
+                  type="password"
+                  id="login-password"
+                  placeholder="Введите пароль"
+                  class="auth-input"
+                  required
+                />
+              </div>
+
+              <button type="submit" class="auth-button">Войти</button>
+
+              <p class="auth-footer">
+                Нет аккаунта?
+                <a
+                  href="#"
+                  class="auth-link"
+                  onclick="window.open('register.html', 'FitnesHub Registration', 'width=700,height=900,scrollbars=yes'); return false;"
+                >
+                  Создать
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>FitnesHub</h4>
+          <p>Ваш партнер в здоровом образе жизни</p>
+        </div>
+        <div class="footer-section">
+          <h4>Быстрые ссылки</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Информация</h4>
+          <p>© 2025 FitnesHub. Все права защищены.</p>
+          <p>📜 Лицензия №12345-FIT-2025</p>
+          <p>Сертификация: ISO 9001:2015</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FitnesHub. Создано с ❤️ для вашего здоровья.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

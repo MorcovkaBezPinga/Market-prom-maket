@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация - FitnesHub</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 25%,
+          #f093fb 50%,
+          #764ba2 75%,
+          #667eea 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientBackground 15s ease infinite;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      @keyframes gradientBackground {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .register-container {
+        max-width: 600px;
+        width: 100%;
+      }
+
+      .register-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        animation: slideIn 0.6s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .register-header {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .register-header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .register-header p {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid #fff;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .close-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: rotate(90deg);
+      }
+
+      .register-form {
+        padding: 40px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        color: #333;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 14px 18px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .form-input::placeholder {
+        color: #999;
+      }
+
+      select.form-input {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23667eea' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        padding-right: 40px;
+      }
+
+      .phone-input-group {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 10px;
+      }
+
+      .phone-input-group select {
+        width: 100%;
+      }
+
+      .phone-input-group input {
+        width: 100%;
+      }
+
+      .input-toggle {
+        display: flex;
+        gap: 20px;
+        margin: 10px 0 20px 0;
+        padding: 15px;
+        background: #f5f5f5;
+        border-radius: 10px;
+      }
+
+      .input-toggle input[type="radio"] {
+        cursor: pointer;
+        accent-color: #667eea;
+        width: 18px;
+        height: 18px;
+      }
+
+      .input-toggle label {
+        cursor: pointer;
+        color: #333;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+      }
+
+      .submit-btn:active {
+        transform: translateY(-1px);
+      }
+
+      .login-link {
+        text-align: center;
+        color: #666;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+
+      .login-link a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .login-link a:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 480px) {
+        .register-header {
+          padding: 30px 20px;
+        }
+
+        .register-header h1 {
+          font-size: 22px;
+        }
+
+        .register-form {
+          padding: 25px;
+        }
+
+        .phone-input-group {
+          grid-template-columns: 100px 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register-container">
+      <div class="register-card">
+        <button class="close-btn" onclick="window.close();">✕</button>
+        <div class="register-header">
+          <h1>Присоединяйтесь к FitnesHub</h1>
+          <p>Начните ваш путь к здоровью прямо сейчас</p>
+        </div>
+
+        <form class="register-form" id="registerForm">
+          <!-- Имя -->
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input
+              type="text"
+              id="name"
+              class="form-input"
+              placeholder="Введите ваше имя"
+              required
+            />
+          </div>
+
+          <!-- Выбор способа регистрации -->
+          <div class="form-group">
+            <label>Способ регистрации:</label>
+            <div class="input-toggle">
+              <input
+                type="radio"
+                id="email-radio"
+                name="method"
+                value="email"
+                checked
+              />
+              <label for="email-radio">Email</label>
+
+              <input
+                type="radio"
+                id="phone-radio"
+                name="method"
+                value="phone"
+              />
+              <label for="phone-radio">Номер телефона</label>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group" id="emailGroup">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-input"
+              placeholder="Введите ваш Email"
+              required
+            />
+          </div>
+
+          <!-- Телефон с выбором страны -->
+          <div class="form-group" id="phoneGroup" style="display: none">
+            <label>Номер телефона</label>
+            <div class="phone-input-group">
+              <select id="countrySelect" class="form-input">
+                <option value="">Страна</option>
+                <option value="+380">🇺🇦 Украина (+380)</option>
+                <option value="+7">🇷🇺 Россия (+7)</option>
+                <option value="+375">🇧🇾 Беларусь (+375)</option>
+                <option value="+48">🇵🇱 Польша (+48)</option>
+                <option value="+43">🇦🇹 Австрия (+43)</option>
+                <option value="+49">🇩🇪 Германия (+49)</option>
+                <option value="+33">🇫🇷 Франция (+33)</option>
+                <option value="+39">🇮🇹 Италия (+39)</option>
+                <option value="+34">🇪🇸 Испания (+34)</option>
+                <option value="+44">🇬🇧 Великобритания (+44)</option>
+                <option value="+1">🇺🇸 США (+1)</option>
+                <option value="+1">🇨🇦 Канада (+1)</option>
+                <option value="+61">🇦🇺 Австралия (+61)</option>
+                <option value="+81">🇯🇵 Япония (+81)</option>
+                <option value="+86">🇨🇳 Китай (+86)</option>
+                <option value="+91">🇮🇳 Индия (+91)</option>
+                <option value="+55">🇧🇷 Бразилия (+55)</option>
+                <option value="+27">🇿🇦 ЮАР (+27)</option>
+              </select>
+              <input
+                type="tel"
+                id="phone"
+                class="form-input"
+                placeholder="(XXX) XXX-XX-XX"
+              />
+            </div>
+          </div>
+
+          <!-- Пароль -->
+          <div class="form-group">
+            <label for="password">Пароль</label>
+            <input
+              type="password"
+              id="password"
+              class="form-input"
+              placeholder="Создайте пароль (минимум 6 символов)"
+              required
+            />
+          </div>
+
+          <!-- Подтверждение пароля -->
+          <div class="form-group">
+            <label for="passwordConfirm">Подтвердите пароль</label>
+            <input
+              type="password"
+              id="passwordConfirm"
+              class="form-input"
+              placeholder="Подтвердите пароль"
+              required
+            />
+          </div>
+
+          <!-- Кнопка отправки -->
+          <button type="submit" class="submit-btn">Зарегистрироваться</button>
+
+          <div class="login-link">
+            Уже есть аккаунт?
+            <a href="javascript:void(0);" onclick="window.close();"
+              >Вернуться</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Переключение между Email и Phone
+      document.querySelectorAll('input[name="method"]').forEach((radio) => {
+        radio.addEventListener("change", function () {
+          const emailGroup = document.getElementById("emailGroup");
+          const phoneGroup = document.getElementById("phoneGroup");
+          const emailInput = document.getElementById("email");
+          const phoneInput = document.getElementById("phone");
+          const countrySelect = document.getElementById("countrySelect");
+
+          if (this.value === "email") {
+            emailGroup.style.display = "block";
+            phoneGroup.style.display = "none";
+            emailInput.required = true;
+            phoneInput.required = false;
+            countrySelect.required = false;
+          } else {
+            emailGroup.style.display = "none";
+            phoneGroup.style.display = "block";
+            emailInput.required = false;
+            phoneInput.required = true;
+            countrySelect.required = true;
+          }
+        });
+      });
+
+      // Обработка формы
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const method = document.querySelector(
+            'input[name="method"]:checked'
+          ).value;
+          const password = document.getElementById("password").value;
+          const passwordConfirm =
+            document.getElementById("passwordConfirm").value;
+
+          if (password.length < 6) {
+            alert("Пароль должен содержать минимум 6 символов!");
+            return;
+          }
+
+          if (password !== passwordConfirm) {
+            alert("Пароли не совпадают!");
+            return;
+          }
+
+          let contact = "";
+          if (method === "email") {
+            contact = document.getElementById("email").value;
+          } else {
+            const country = document.getElementById("countrySelect").value;
+            const phone = document.getElementById("phone").value;
+
+            if (!country) {
+              alert("Пожалуйста, выберите страну!");
+              return;
+            }
+
+            contact = country + " " + phone;
+          }
+
+          alert(
+            `✅ Регистрация успешна!\n\nИмя: ${name}\n${
+              method === "email" ? "Email" : "Номер"
+            }: ${contact}\n\nДобро пожаловать в FitnesHub! 💪`
+          );
+
+          // Здесь можно отправить данные на сервер
+          // fetch('/api/register', { method: 'POST', body: JSON.stringify({...}) })
+        });
+
+      console.log("✅ Форма регистрации загружена!");
+    </script>
+  </body>
+</html>
